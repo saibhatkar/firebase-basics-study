@@ -49,7 +49,16 @@ Use get()
 ✔ When you want to read data once
 ✔ When you don’t need real-time updates
 
-# ------------------------------------- #
+# -------------------------------------
+
 # V4
 
 # Authentication in firebase
+
+create an signup file
+go to firebase console and enable email & password auth
+
+in signup file import app , getauth
+create an instance of auth
+to create use use `createUserWithEmailAndPassword (auth , email, password) `
+in this pass aprgument (auth , email, password)
