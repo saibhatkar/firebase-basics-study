@@ -1,38 +1,33 @@
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { app } from "../firebase";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const auth = getAuth(app);
 
-const SignUp = () => {
+const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const createUser = () => {
-    createUserWithEmailAndPassword(auth, email, password).then((value) => {
-      console.log("user data: ", value);
-      alert("User created successfully");      
-    })
-    // // if response is 400 display error message
-    // }).catch((error) => {
-    //   if (error.code === 'auth/email-already-in-use') {
-    //     alert("Email already in use");
-    //   } else {
-    //     alert("Error creating user: " + error.message);
-    //   }
-    // });
-    
+  const signInUser = () => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((value) => {
+        console.log("Sign In Successful: ", value);
+      })
+      .catch((error) => {
+        console.log("Error in signing in", error);
+      });
   };
+
   return (
     <>
-      <div className="signup-page">
-        <h2>Sign Up page</h2>
+      <div className="signin-page">
+        <h2>Sign In page</h2>
         <div className="email">
           <label name="email"> Email: </label>
           <input
             type="email"
             required
-            placeholder="Enter email"
+            placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -43,7 +38,7 @@ const SignUp = () => {
           <input
             type="password"
             required
-            placeholder="Enter password"
+            placeholder="Enter your password"
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
@@ -52,11 +47,11 @@ const SignUp = () => {
         </div>
 
         <div className="submitBtn">
-          <button onClick={createUser}> Sign Up </button>
+          <button onClick={signInUser}> Sign In </button>
         </div>
       </div>
     </>
   );
 };
 
-export default SignUp;
+export default SignIn;

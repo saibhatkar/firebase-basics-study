@@ -62,3 +62,14 @@ in signup file import app , getauth
 create an instance of auth
 to create use use `createUserWithEmailAndPassword (auth , email, password) `
 in this pass aprgument (auth , email, password)
+
+
+# V5
+use sign in user with user and password
+
+create an signIn file
+
+in signIn file import app , getauth
+create an instance of auth
+to create use use `signInWithEmailAndPassword (auth , email, password) `
+in this pass aprgument (auth , email, password)

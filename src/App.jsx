@@ -4,6 +4,7 @@ import { app } from "./firebase"; //import app to make sure firebase is initiali
 import { getDatabase, ref, set, onValue } from "firebase/database"; //import database function
 import AuthenticationUser from "./authenticationUser";
 import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
 const db = getDatabase(app); //1.initialize database  2.db is created instance of database
 
 // learn about putting and reading data from realtime database
@@ -57,6 +58,11 @@ function App() {
 
       <div className="signup">
         <SignUp />
+      </div>
+
+      
+      <div className="signin">
+        <SignIn />
       </div>
     </>
   );
