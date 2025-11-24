@@ -73,3 +73,15 @@ in signIn file import app , getauth
 create an instance of auth
 to create use use `signInWithEmailAndPassword (auth , email, password) `
 in this pass aprgument (auth , email, password)
+
+# v6
+use context to send data in realtime database as well as auth section
+
+1. crerate an firebase context
+2. setup config setup and and  database url 
+3. getAuth and getDatabase setup
+4. wrap app component by FirebaseProvider
+5. created FirebaseContextSignUp component
+6. create an custom hook for firebase in context
+7. use this hook in FirebaseContextSignUp 
+

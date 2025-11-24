@@ -5,6 +5,7 @@ import { getDatabase, ref, set, onValue } from "firebase/database"; //import dat
 import AuthenticationUser from "./authenticationUser";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
+import FirebaseContextSignUp from "./pages/FirebaseContextSignUp";
 const db = getDatabase(app); //1.initialize database  2.db is created instance of database
 
 // learn about putting and reading data from realtime database
@@ -52,7 +53,7 @@ function App() {
       </div>
 
       <div className="boxToAllComponents">
-      <h4>Authentication User Component</h4>
+        <h4>Authentication User Component</h4>
         <AuthenticationUser />
       </div>
 
@@ -60,9 +61,13 @@ function App() {
         <SignUp />
       </div>
 
-      
       <div className="signin">
         <SignIn />
+      </div>
+
+      <div className="firebaseContextSignUp">
+        {/* Firebase Context Sign Up Component */}
+        <FirebaseContextSignUp />
       </div>
     </>
   );
